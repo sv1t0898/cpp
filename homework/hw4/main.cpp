@@ -3,16 +3,16 @@
 
 
 int main() {
-
+    //system("chcp 65001"); // раскоментировать для завуска в windows
     std::cout << "Задание 1. Минимум из двух чисел\n";
-
+    
     int numA;
     int numB;
     std::cout << "Введите первое число:";
     std::cin >> numA;
     std::cout << "Введите второе число:";
     std::cin >> numB;
-
+    
     if (numA > numB) {
         std::cout << "Наименьшее число: "<< numB <<".\n";
     }else if (numA == numB) {
@@ -20,11 +20,11 @@ int main() {
     }else {
         std::cout << "Наименьшее число: "<< numA <<".\n";
     }
-
+    
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 2. Складываем в уме\n";
-
+    
     int numC;
     int numD;
     int numI;
@@ -34,19 +34,19 @@ int main() {
     std::cin >> numD;
     std::cout << "Введите их сумму:";
     std::cin >> numI;
-
+    
     if (numI == (numD + numC)) {
         std::cout << "Верно!\n";
     }else {
         std::cout << "Ошибка! Верный результат:" << numC + numD << ".\n";
     }
-
+    
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 3. Проверка на чётное число\n";
-
+    
     int numF;
-
+    
     std::cout << "Введите число: ";
     std::cin >> numF;
     std::cout << "-----Проверяем-----\n";
@@ -55,15 +55,15 @@ int main() {
     }else {
         std::cout << "Число " << numF << " — НЕ чётное\n";
     }
-
+    
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 4. Калькулятор опыта\n";
-
+    
     int experience;
     std::cout << "Введите число очков опыта:";
     std::cin >> experience;
-
+    
     if (experience >= 1000 and experience < 2500) {
         std::cout << "Ваш уровень: 2\n";
     }else if (experience >= 2500 and experience < 5000) {
@@ -74,12 +74,12 @@ int main() {
         std::cout << "Ваш уровень: \n";
     }
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 5. Кратность числа\n";
-
+    
     int numG;
     int numH;
-
+    
     std::cout << "Введите первое число: ";
     std::cin >> numG;
     std::cout << "Введите второе число: ";
@@ -90,9 +90,9 @@ int main() {
     }else {
         std::cout << "Нет,  "<< numG <<" не делится на "<< numH <<" без остатка.\n";
     }
-
+    
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 6. Улучшим барберов\n";
 
     int man;
@@ -110,13 +110,13 @@ int main() {
     }
     //????????????????????????????????
     std::cout << "____________________________________________________________________";
-
+    
     std::cout << "Задание 7. Меню ресторана\n";
-
+    
     int dayWeek;
     std::cout << "Введите день недели (от 1 до 7):";
     std::cin >> dayWeek;
-
+    
     if (dayWeek == 1) {
         std::cout << "Меню сегодня (пн): \n";
         std::cout << "Гороховый суп\n";
@@ -162,34 +162,60 @@ int main() {
     }else {
         std::cout << "Дней в неделе 7 попробуй еще.\n";
     }
-
+    
     std::cout << "____________________________________________________________________";
 
-    std::cout << "Задание 8. Зарплата (дополнительное задание)";
-
+    std::cout << "Задание 8. Зарплата (дополнительное задание)\n";
+    
     int firstEmployee;
     int secondEmployee;
     int thirdEmployee;
-
+    int higthPrice;
+    int differencePrice;
+    
     std::cout << "Введите зарплату первого сотрудника:\n";
     std::cin >> firstEmployee;
     std::cout << "Введите зарплату второго сотрудника:\n";
     std::cin >> secondEmployee;
     std::cout << "Введите зарплату третьего сотрудника:\n";
     std::cin >> thirdEmployee;
-    std::cout << "-----Считаем-----";
-
-
-
+    std::cout << "-----Считаем-----\n";
+    
+    int averangePrice = (firstEmployee + secondEmployee + thirdEmployee)/3;
+    
+    if (firstEmployee > secondEmployee && secondEmployee > thirdEmployee) {
+        std::cout << "Самая высокая зарплата в отделе: "<< firstEmployee <<" рублей.\n";
+        higthPrice = firstEmployee;
+    }else if (firstEmployee < secondEmployee && secondEmployee > thirdEmployee) {
+        higthPrice = secondEmployee;
+        std::cout << "Самая высокая зарплата в отделе: " << secondEmployee << " рублей.\n";
+    }else {
+        std::cout << "Самая высокая зарплата в отделе: " << thirdEmployee << " рублей.\n";
+        higthPrice = thirdEmployee;
+    }
+    
+    if (firstEmployee < secondEmployee && secondEmployee < thirdEmployee) {
+        differencePrice = higthPrice - firstEmployee;
+        std::cout << "Разница между самой высокой и самой низкой зарплатой в отделе: "<< differencePrice <<" рублей.\n";
+    }else if (firstEmployee > secondEmployee && secondEmployee < thirdEmployee) {
+        differencePrice = higthPrice - secondEmployee;
+        std::cout << "Разница между самой высокой и самой низкой зарплатой в отделе: " << differencePrice << " рублей.\n";
+    }else {
+        differencePrice = higthPrice - thirdEmployee;
+        std::cout << "Разница между самой высокой и самой низкой зарплатой в отделе:" << differencePrice << " рублей.\n";
+    }
+    
+    std::cout << "Средняя зарплата в отделе: " << averangePrice << " рублей.\n";
+    
     std::cout << "____________________________________________________________________";
 
     std::cout << "Задание 9. Прогрессивный налог (дополнительное задание)\n";
-
+    
     int income;
-
+    
     std::cout << "Введите свой доход:";
     std::cin >> income;
-
+    
     if (income < 10000) {
         std::cout << income*0.13 << "\n";
     }else if (income >= 10000 and income < 50000) {

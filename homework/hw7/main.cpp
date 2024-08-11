@@ -16,7 +16,56 @@ int main() {
 
     std::cout << "Задание 2. Кофемашина\n";
 
+    int whater = 0;
+    int milk = 0;
+    int change = 0;
+    int cupLatte = 0;
+    int cupAmericano = 0;
 
+    std::cout << "Введите количество воды в мл:";
+    std::cin >> whater;
+    std::cout << "Введите количество молока в мл:";
+    std::cin >> milk;;
+
+
+
+    while (true) {
+        std::cout << "Выберите напиток (1 — американо, 2 — латте):\n";
+        std::cin >> change;
+        if (change == 1 || change == 2) {}
+        else continue;
+
+
+        if (change == 1) {
+            if (whater < 300) {
+                std::cout << "Не хватает воды.\n";
+            }else {
+                whater -= 300;
+                ++ cupAmericano;
+                std::cout << "Ваш напиток готов\n";
+            }
+        }else {
+            if (whater < 270) {
+                std::cout << "Не хватает воды.\n";
+            }else if (milk < 30) {
+                std::cout << "Нехватает молока.\n";
+            }else {
+                whater -= 270;
+                milk -= 30;
+                ++ cupLatte;
+                std::cout << "Ваш напиток готов\n";
+            }
+        }
+        if (milk < 30 && whater < 300) {
+            std::cout << "***Отчёт*** \n";
+            std::cout << "Ингредиентов осталось:\n";
+            std::cout << "\t\tВода: " << whater << " мл.\n";
+            std::cout << "\t\tМолоко: " << milk << " мл.\n";
+            std::cout << "Кружек американо приготовлено: " << cupAmericano << "\n";
+            std::cout << "Кружек латте приготовлено: " << cupLatte << "\n";
+            break;
+        }
+    }
 
     std::cout << "-----------------------------------------------------------------\n";
 

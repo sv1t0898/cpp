@@ -116,6 +116,23 @@ int main() {
 
     std::cout << "Задание 5. Координатные оси\n";
 
+    int x = 60;
+    int y = 30;
+
+    for (int i = 0; i < y; ++i) {
+        for (int n = 0; n < x; ++n) {
+            if (n == x/2) {
+                std::cout << "|";
+            }else if(i == y/2){
+                std::cout << "-";
+            }else {std::cout << " ";}
+            if (n == x/2 && i == y/2) {
+                std::cout << "+";
+            }
+        }
+        std::cout << "\n";
+    }
+
 
 
     std::cout << "-----------------------------------------------------------------\n";
